@@ -58,7 +58,9 @@ Looks like we have the following data:
 
 * height (seems like it's in centimeters) 
 * weight (seems to be in kilogram)
+*Forehead Height (seems to be in inches)
 * Sex
+*hair color
 
 
 # Cleaning
@@ -78,6 +80,7 @@ Now we see that there is one person with a height of 6. That could be a typo, or
 ```
 
 Height values seem ok now.
+Variable `Forehead Height` values also seem reasonable in inches.
 
 Now let's look at the `Weight` variable. There is a person with weight of 7000, which is impossible, and one person with missing weight.
 To be able to analyze the data, we'll remove those individuals as well.
@@ -99,7 +102,7 @@ Well proceed here by removing that individual with that NA entry. Since this kee
 
 ```{r, cleandata5}
 ```
-
+Now checking `Hair color` variable, it is character, so it seems correct.
 
 # Save data 
 

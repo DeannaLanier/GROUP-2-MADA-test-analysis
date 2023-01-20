@@ -101,6 +101,9 @@ skimr::skim(d3)
 #well proceed here by removing that individual
 #since this keeps an empty category for Sex, I'm also using droplevels() to get rid of it
 d4 <- d3 %>% dplyr::filter(Sex != "NA") %>% droplevels()
+colnames(d4)[4] = "ForeheadHeight"
+colnames(d4)[5]="Haircolor"
+dplyr::glimpse(d4)
 skimr::skim(d4)
 
 

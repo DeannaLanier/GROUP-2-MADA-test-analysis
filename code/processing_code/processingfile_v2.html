@@ -1126,7 +1126,19 @@ $ `Hair color`      &lt;chr&gt; "Brown", "Blonde", "Brown", "Black", "Blonde", "
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">#well proceed here by removing that individual</span></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co">#since this keeps an empty category for Sex, I'm also using droplevels() to get rid of it</span></span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>d4 <span class="ot">&lt;-</span> d3 <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(Sex <span class="sc">!=</span> <span class="st">"NA"</span>) <span class="sc">%&gt;%</span> <span class="fu">droplevels</span>()</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>skimr<span class="sc">::</span><span class="fu">skim</span>(d4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(d4)[<span class="dv">4</span>] <span class="ot">=</span> <span class="st">"ForeheadHeight"</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(d4)[<span class="dv">5</span>]<span class="ot">=</span><span class="st">"Haircolor"</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">glimpse</span>(d4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 9
+Columns: 5
+$ Height         &lt;dbl&gt; 180, 175, 178, 156, 166, 155, 133, 166, 154
+$ Weight         &lt;dbl&gt; 80, 70, 76, 90, 110, 54, 45, 55, 50
+$ Sex            &lt;fct&gt; M, M, F, M, M, F, F, M, M
+$ ForeheadHeight &lt;dbl&gt; 2.4, 2.1, 2.5, 2.6, 2.5, 2.1, 2.2, 2.3, 2.7
+$ Haircolor      &lt;chr&gt; "Brown", "Blonde", "Black", "Brown", "Brown", "Blonde",…</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>skimr<span class="sc">::</span><span class="fu">skim</span>(d4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
 <caption>Data summary</caption>
@@ -1199,7 +1211,7 @@ $ `Hair color`      &lt;chr&gt; "Brown", "Blonde", "Brown", "Black", "Blonde", "
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Hair color</td>
+<td style="text-align: left;">Haircolor</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">3</td>
@@ -1299,7 +1311,7 @@ $ `Hair color`      &lt;chr&gt; "Brown", "Blonde", "Brown", "Black", "Blonde", "
 <td style="text-align: left;">▇▂▃▂▂</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Forehead Height</td>
+<td style="text-align: left;">ForeheadHeight</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">2.38</td>
@@ -1323,13 +1335,13 @@ $ `Hair color`      &lt;chr&gt; "Brown", "Blonde", "Brown", "Black", "Blonde", "
 <p>Finally, we save the clean data as RDS file. I suggest you save your processed and cleaned data as RDS or RDA/Rdata files. This preserves coding like factors, characters, numeric, etc. If you save as CSV, that information would get lost. However, CSV is better for sharing with others since it’s plain text. If you do CSV, you might want to write down somewhere what each variable is.</p>
 <p>See here for some suggestions on how to store your processed data: http://www.sthda.com/english/wiki/saving-data-into-r-data-format-rds-and-rdata</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># all done, data is clean now. </span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's assign at the end to some final variable</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># makes it easier to add steps above</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>processeddata <span class="ot">&lt;-</span> d4</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co"># location to save file</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>save_data_location <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data"</span>,<span class="st">"processed_data"</span>,<span class="st">"processeddata.rds"</span>)</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(processeddata, <span class="at">file =</span> save_data_location)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># all done, data is clean now. </span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's assign at the end to some final variable</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># makes it easier to add steps above</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>processeddata <span class="ot">&lt;-</span> d4</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co"># location to save file</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>save_data_location <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data"</span>,<span class="st">"processed_data"</span>,<span class="st">"processeddata.rds"</span>)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(processeddata, <span class="at">file =</span> save_data_location)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 

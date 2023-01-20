@@ -110,7 +110,7 @@ knitr::include_graphics(here("results","Height_Hair_Boxplot.png"))
 #| label: fig-result
 #| fig-cap: "Scatter plot of Weight and Forehead Size"
 #| echo: FALSE
-knitr::include_graphics(here("results","Height_Hair_Boxplot.png"))
+knitr::include_graphics(here("results","Weight_Forehead_Scatter.png"))
 ```
 
 ```{r}

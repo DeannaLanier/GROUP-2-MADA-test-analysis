@@ -81,7 +81,7 @@ Note the loading of the data providing a **relative** path using the `../../` no
 #| label: tbl-summarytable
 #| tbl-cap: "Data summary table."
 #| echo: FALSE
-resulttable=readRDS("../../results/summarytable.rds")
+resulttable=readRDS(here("results","summarytable.rds"))
 knitr::kable(resulttable)
 ```
 
@@ -92,7 +92,7 @@ knitr::kable(resulttable)
 @fig-boxplot shows a boxplot figure produced by one of the R scripts.
 
 ```{r}
-#| label: fig-result
+#| label: fig-boxplot
 #| fig-cap: "Boxplot of Height and Hair Color"
 #| echo: FALSE
 knitr::include_graphics(here("results","Height_Hair_Boxplot.png"))
@@ -101,7 +101,7 @@ knitr::include_graphics(here("results","Height_Hair_Boxplot.png"))
 @fig-scatterplot shows a scatterplot figure produced by one of the R scripts.
 
 ```{r}
-#| label: fig-result
+#| label: fig-scatterplot
 #| fig-cap: "Scatter plot of Weight and Forehead Size"
 #| echo: FALSE
 knitr::include_graphics(here("results","Weight_Forehead_Scatter.png"))

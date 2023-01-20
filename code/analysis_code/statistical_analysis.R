@@ -21,19 +21,18 @@ mydata <- readRDS(data_location)
 ####################################
 
 #Boxplot of height and hair color
-fig1 = ggplot(data = mydata, aes(x=HairColor, y=Height)) + geom_boxplot() + ggtitle("Height and Hair Boxplot") +theme(plot.title = element_text(hjust = 0.5))+ xlab(
+fig1 = ggplot(data = mydata, aes(x=Haircolor, y=Height)) + geom_boxplot() + ggtitle("Height and Hair Boxplot") +theme(plot.title = element_text(hjust = 0.5))+ xlab(
   "Hair Color") + ylab("Height")
 #Sava data
-fig1File = here("results","Height_HairH_Boxplot.png")
-fig1File
-ggsave(filename = fig1File, plot=fig1)
+fig1_File = here("results","Height_HairH_Boxplot.png")
+ggsave(filename = fig1_File, plot=fig1)
 
 #Scatter plot Weight and ForeheadHeight
-fig_2 = ggplot(data = mydata, aes(x=Weight, y=ForeheadHeight)) + geom_point() + 
+fig2 = ggplot(data = mydata, aes(x=Weight, y=ForeheadHeight)) + geom_point() + 
   ggtitle("Weight and Forehead Scatterplot")+theme(plot.title = element_text(hjust = 0.5))+ xlab(
     "Weight") + ylab("Forehead Height")
 fig2_File = here("results","Weight_Forehead_Scatter.png")
-ggsave(filename = fig2_File, plot=fig_2)
+ggsave(filename = fig2_File, plot=fig2)
 
 
 ######################################

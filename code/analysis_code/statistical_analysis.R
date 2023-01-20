@@ -24,7 +24,7 @@ mydata <- readRDS(data_location)
 fig1 = ggplot(data = mydata, aes(x=Haircolor, y=Height)) + geom_boxplot() + ggtitle("Height and Hair Boxplot") +theme(plot.title = element_text(hjust = 0.5))+ xlab(
   "Hair Color") + ylab("Height")
 #Sava data
-fig1_File = here("results","Height_HairH_Boxplot.png")
+fig1_File = here("results","Height_Hair_Boxplot.png")
 ggsave(filename = fig1_File, plot=fig1)
 
 #Scatter plot Weight and ForeheadHeight

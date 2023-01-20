@@ -34,7 +34,6 @@ fig_2 = ggplot(data = mydata, aes(x=Weight, y=ForeheadHeight)) + geom_point() +
     "Weight") + ylab("Forehead Height")
 fig2_File = here("results","Weight_Forehead_Scatter.png")
 ggsave(filename = fig2_File, plot=fig_2)
-#Sava data
 
 
 ######################################

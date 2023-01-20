@@ -20,7 +20,7 @@ mydata <- readRDS(data_location)
 #Plot Data#
 ####################################
 
-#Boxplot of height and hair color
+#Boxplot of height and hair color 
 fig1 = ggplot(data = mydata, aes(x=Haircolor, y=Height)) + geom_boxplot() + ggtitle("Height and Hair Boxplot") +theme(plot.title = element_text(hjust = 0.5))+ xlab(
   "Hair Color") + ylab("Height")
 #Sava data

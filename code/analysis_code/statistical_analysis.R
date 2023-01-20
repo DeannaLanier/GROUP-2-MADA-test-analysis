@@ -20,11 +20,6 @@ mydata <- readRDS(data_location)
 #Plot Data#
 ####################################
 
-#edit column names
-colnames(mydata)[4] = "ForeheadHeight"
-colnames(mydata)[5] = "HairColor"
-colnames(mydata)
-
 #Boxplot of height and hair color
 fig1 = ggplot(data = mydata, aes(x=HairColor, y=Height)) + geom_boxplot() + ggtitle("Height and Hair Boxplot") +theme(plot.title = element_text(hjust = 0.5))+ xlab(
   "Hair Color") + ylab("Height")

@@ -1119,7 +1119,7 @@ $ `Hair color`      &lt;chr&gt; "Brown", "Blonde", "Brown", "Black", "Blonde", "
 </table>
 </div>
 </div>
-<p>Now we see that there is another NA, but it’s not <code>NA</code> from R, instead it was loaded as character and is now considered as a category. Well proceed here by removing that individual with that NA entry. Since this keeps an empty category for Sex, I’m also using droplevels() to get rid of it.</p>
+<p>Now we see that there is another NA, but it’s not <code>NA</code> from R, instead it was loaded as character and is now considered as a category. Well proceed here by removing that individual with that NA entry. Since this keeps an empty category for Sex, I’m also using droplevels() to get rid of it. Now checking <code>Hair color</code> variable, it is character, so it seems correct. However, let’s remove the space in the column tile for both <code>Forehead height</code>and <code>Hair color</code></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#now we see that there is another NA, but it's not "NA" from R </span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">#instead it was loaded as character and is now considered as a category</span></span>
@@ -1327,7 +1327,6 @@ $ Haircolor      &lt;chr&gt; "Brown", "Blonde", "Black", "Brown", "Brown", "Blon
 </table>
 </div>
 </div>
-<p>Now checking <code>Hair color</code> variable, it is character, so it seems correct.</p>
 </section>
 <section id="save-data" class="level1">
 <h1>Save data</h1>

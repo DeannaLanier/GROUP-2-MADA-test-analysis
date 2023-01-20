@@ -98,11 +98,10 @@ Now checking the `Sex` variable. Sex should be a categorical/factor variable but
 
 
 Now we see that there is another NA, but it's not `NA` from R, instead it was loaded as character and is now considered as a category.
-Well proceed here by removing that individual with that NA entry. Since this keeps an empty category for Sex, I'm also using droplevels() to get rid of it.
+Well proceed here by removing that individual with that NA entry. Since this keeps an empty category for Sex, I'm also using droplevels() to get rid of it. Now checking `Hair color` variable, it is character, so it seems correct. However, let's remove the space in the column tile for both `Forehead height`and `Hair color`
 
 ```{r, cleandata5}
 ```
-Now checking `Hair color` variable, it is character, so it seems correct.
 
 # Save data 
 

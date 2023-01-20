@@ -101,6 +101,20 @@ _To get some further insight into your data, if reasonable you could compute sim
 
 ```{r}
 #| label: fig-result
+#| fig-cap: "Boxplot of Height and Hair Color"
+#| echo: FALSE
+knitr::include_graphics(here("results","Height_Hair_Boxplot.png"))
+```
+
+```{r}
+#| label: fig-result
+#| fig-cap: "Scatter plot of Weight and Forehead Size"
+#| echo: FALSE
+knitr::include_graphics(here("results","Height_Hair_Boxplot.png"))
+```
+
+```{r}
+#| label: fig-result
 #| fig-cap: "Height and weight stratified by sex."
 #| echo: FALSE
 knitr::include_graphics(here("results","height_weight_stratified.png"))
